@@ -22,16 +22,3 @@ Dado que eu sou um usuário cadastrado
 E já informei a minha localização na tela de cadastro
 Quando eu entrar na tela de sugestões
 Então irei ver as exposições que estão ocorrendo em locais próximos à onde eu estou.
-Then teste para relatório
-
-Cenário 3-2(teste): Apresentar ao usuário cadastrado exposições que estão acontecendo próximas à localização dele.
-Dado que eu sou um usuário cadastrado
-E já informei a minha localização na tela de cadastro
-Quando eu entrar na tela de sugestões
-Então irei ver as exposições que estão ocorrendo em locais próximos à onde eu estou.
-
-Cenário 3-3(teste): Apresentar ao usuário cadastrado exposições que estão acontecendo próximas à localização dele.
-Dado que eu sou um usuário cadastrado
-E já informei a minha localização na tela de cadastro
-Quando eu entrar na tela de sugestões
-Então irei ver as exposições que estão ocorrendo em locais próximos à onde eu estou.
