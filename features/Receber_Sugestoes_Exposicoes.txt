@@ -17,9 +17,9 @@ Então irei ver as exposições de categorias que eu não conheço ainda
 E exposições de artistas que eu não conheço ainda
 E que o sistema acredita que eu possa gostar.
 
-
 Cenário 3: Apresentar ao usuário cadastrado exposições que estão acontecendo próximas à localização dele.
 Dado que eu sou um usuário cadastrado
 E já informei a minha localização na tela de cadastro
 Quando eu entrar na tela de sugestões
 Então irei ver as exposições que estão ocorrendo em locais próximos à onde eu estou.
+Then teste para relatório
