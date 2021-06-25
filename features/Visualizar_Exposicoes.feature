@@ -25,3 +25,4 @@ Given Eu estou na página de uma exposição
 And Eu consigo ver o aviso de outras indicações relacionadas
 When Eu clico no aviso
 Then Eu consigo visualizar uma lista de exposições relacionadas à exposição que estou vendo
+
