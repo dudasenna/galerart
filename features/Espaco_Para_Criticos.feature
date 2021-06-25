@@ -37,3 +37,10 @@ Dado que eu sou um usuário cadastrado
 E estou na listagem de exposições, artistas e obras
 Quando eu entrar em alguma das telas
 Então não irei ver um espaço indicando que há críticas sobre aquele item
+
+
+Cenário 1: Espaço reservado para críticos -falha.
+Dado que eu sou um crítico
+E não estou cadastrado como um
+Quando eu entrar na tela para críticos
+Então não irei ver todo o espaço reservado para críticos.
