@@ -38,3 +38,15 @@ E estou na listagem de exposições, artistas e obras
 Quando eu entrar em alguma das telas
 Então não irei ver um espaço indicando que há críticas sobre aquele item
 E não saberei que há críticas a serem vistas
+
+Cenário 7: Espaço reservado para críticos -falha.
+Dado que eu sou um crítico
+E não estou cadastrado como um
+Quando eu entrar na tela para críticos
+Então não irei ver todo o espaço reservado para críticos.
+
+Cenário 8: Listagem de exposições, artistas e obras - falha.
+Dado que eu não sou um crítico
+E estou no espaço para críticos
+Quando eu entrar na tela listagem
+Então não irei ver a lista das exposições, artistas e obras.
