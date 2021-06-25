@@ -37,3 +37,4 @@ Dado que eu sou um usuário cadastrado
 E estou na listagem de exposições, artistas e obras
 Quando eu entrar em alguma das telas
 Então não irei ver um espaço indicando que há críticas sobre aquele item
+E não saberei que há críticas a serem vistas
