@@ -4,7 +4,7 @@ Cenário 1: Espaço reservado para críticos.
 Dado que eu sou um crítico
 E já estou cadastrado como um
 Quando eu entrar na tela para críticos
-Então irei ver todo o espaço reservado para críticos
+Então irei ver todo o espaço reservado para críticos.
 
 Cenário 2: Listagem de exposições, artistas e obras.
 Dado que eu sou um crítico
@@ -25,3 +25,15 @@ E estou na listagem de exposições, artistas e obras
 Quando eu entrar em alguma das telas
 Então irei ver um espaço indicando que há críticas sobre aquele item
 E poderei ou não abrir essa crítica para ler.
+
+Cenário 5: Criação da crítica - falha.
+Dado que eu sou um crítico
+E estou na listagem de exposições, artistas e obras
+Quando eu entrar em alguma das telas
+Então não irei ver um espaço para criar uma crítica
+
+Cenário 6: Exibição da crítica na sessão da exposição, artista ou obra - falha.
+Dado que eu sou um usuário cadastrado
+E estou na listagem de exposições, artistas e obras
+Quando eu entrar em alguma das telas
+Então não irei ver um espaço indicando que há críticas sobre aquele item
