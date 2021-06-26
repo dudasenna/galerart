@@ -1,3 +1,4 @@
+  
 Feature: Receber sugestões de exposições
 Como usuário cadastrado no sistema eu gostaria de receber sugestões de exposições
 Para que eu possa ficar por dentro das exposições que estão acontecendo e visitá-las.
