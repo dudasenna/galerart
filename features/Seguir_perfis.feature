@@ -38,3 +38,9 @@ When I click on it
 Then I am taken to a page that exhibits an error message
 And I can see no information about the museum
 Then blablabla
+
+Scenario: Fail to look at a museum's profile Page
+Given I am seeing the summed up profile of a museum
+When I click on it
+Then I am taken to a page that exhibits an error message
+And I can see no information about the museum
