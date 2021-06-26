@@ -51,3 +51,9 @@ E estou no espaço para críticos
 Quando eu entrar na tela listagem
 Então não irei ver a lista das exposições, artistas e obras.
 E não saberei o que está acontecendo
+
+Cenário 9: Listagem.
+Dado que eu sou um crítico
+E estou no espaço para críticos
+Quando eu entrar na tela listagem
+Então irei ver a lista das exposições, artistas e obras.
