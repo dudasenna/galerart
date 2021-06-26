@@ -57,3 +57,9 @@ Dado que eu sou um crítico
 E estou no espaço para críticos
 Quando eu entrar na tela listagem
 Então irei ver a lista das exposições, artistas e obras.
+
+Cenário 10 (teste): Listagem.
+Dado que eu sou um crítico
+E estou no espaço para críticos
+Quando eu entrar na tela listagem
+Então irei ver a lista das exposições, artistas e obras.
