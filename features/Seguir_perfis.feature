@@ -19,9 +19,15 @@ When I click on the follow button
 Then I can see an alert that informs me I’m following this profile 
 And I can receive information published by the profile on my Updates Feed
 
-
-Scenario: Look at Updates FeedGiven I am logged in
+Scenario: Look at Updates Feed
+Given I am logged in
 When I click on the Updates Feed
 Then I go to the Updated Feed
 And I can see the information published by the profiles I follow in a certain order in summed up cards
 And I can click on the cards to see the full publication
+
+Scenario: Fail to look at Updates Feed
+Given I am logged in
+When I click on the Updates Feed
+Then I go to the Updates Feed
+And I cannot see any information published
