@@ -26,3 +26,14 @@ And Eu consigo ver o aviso de outras indicações relacionadas
 When Eu clico no aviso
 Then Eu consigo visualizar uma lista de exposições relacionadas à exposição que estou vendo
 
+Scenario: Falha na visualização de certa exposição
+Given Eu estou na lista de exposições
+When Eu clico em uma exposição
+Then Eu sou levado a página da exposição
+And O sistema retorna um erro que a página não foi encontrada
+
+Scenario: Falha na lista de exposições
+Given Eu estou na página inicial
+And Eu consigo ver o ícone da lista de exposições
+When Eu clico na lista de exposições
+Then Eu não consigo ver nenhum conteúdo pois a lista está vazia
