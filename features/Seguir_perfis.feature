@@ -31,3 +31,9 @@ Given I am logged in
 When I click on the Updates Feed
 Then I go to the Updates Feed
 And I cannot see any information published
+
+Scenario: Fail to look at a museum's profile Page
+Given I am seeing the summed up profile of a museum
+When I click on it
+Then I am taken to a page that exhibits an error message
+And I can see no information about the museum
