@@ -1,5 +1,5 @@
 import React from 'react';
-// import Header from './components/Header/index';
+import Header from './components/Header/index';
 import Artists from './components/Artists/index';
 // import Exhibit from './components/Exhibit/index';
 import './styles/global.module.scss';
@@ -7,7 +7,7 @@ import './styles/global.module.scss';
 function App() {
   return (
     <div>
-      {/* <Header /> */}
+      <Header />
       <Artists />
       {/* <Exhibit /> */}
     </div>
