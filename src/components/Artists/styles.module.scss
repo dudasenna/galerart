@@ -1,0 +1,52 @@
+.container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  font-family: 'Roboto', sans-serif;
+
+  h2{
+    padding-top: 1rem;
+    font-style: italic;
+  }
+}
+
+.carouselContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 1rem;
+  padding: 0.5rem;
+  background-color: #EDF2F7;
+  border-radius: 0.5rem;
+  box-shadow: 6px 6px 9px -1px rgba(0,0,0,0.75);
+}
+
+.perfilInfo{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding-bottom: 0.5rem;
+
+  img{
+    border-radius: 50%;
+  }
+
+  article{
+    padding-left: 1rem;
+    font-size: 1rem;
+  }
+}
+
+.images{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.carousel{
+  width: 100%;
+}
