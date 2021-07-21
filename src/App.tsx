@@ -1,5 +1,6 @@
 import React from 'react';
 import Home from './pages/home';
+import Profile from './pages/profile';
 import './styles/global.module.scss';
 import styled from 'styled-components';
 
@@ -12,7 +13,8 @@ const Container = styled.div`
 function App() {
   return (
     <Container>
-      <Home />
+      {/* <Home /> */}
+      <Profile />
     </Container>
   );
 }
