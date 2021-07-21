@@ -1,16 +1,19 @@
 import React from 'react';
-import Header from './components/Header/index';
-import Artists from './components/Artists/index';
-// import Exhibit from './components/Exhibit/index';
+import Home from './pages/home';
 import './styles/global.module.scss';
+import styled from 'styled-components';
+
+const Container = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: 'white';
+`
 
 function App() {
   return (
-    <div>
-      <Header />
-      <Artists />
-      {/* <Exhibit /> */}
-    </div>
+    <Container>
+      <Home />
+    </Container>
   );
 }
 
