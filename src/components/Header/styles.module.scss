@@ -1,36 +1,103 @@
 .container{
   flex: 1;
   display: flex;
-  min-height: 150px;
+  min-height: 100px;
   width: 100%;
-  background-color: antiquewhite;
   align-items: center;
-  justify-content: center;
-  font-family: 'Roboto', sans-serif;
-  border-bottom-left-radius: 25%;
-  border-bottom-right-radius: 25%;
-  h2{
-    font-size: 3rem;
-    font-style: italic;
+  border-bottom: 2px solid #C4C4C4;
+}
+.title{
+  flex:1;
+  display: flex;
+  h2:nth-child(1){
+    font-family: 'montserrat' , sans-serif;
+    font-weight: 400;
+    font-size: 40px;
+    color: #595959;
+  }
+  h2:nth-child(2){
+    color: #FF7600;
+    font-family: 'montserrat' , sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  h2:nth-child(3){
+    color: #CD113B;
+    font-family: 'montserrat' , sans-serif;
+    font-weight: 700;
+    font-size: 40px;
+  }
+  h2:nth-child(4){
+    color: #52006A;
+    font-family: 'montserrat' , sans-serif;
+    font-weight: 700;
+    font-size: 40px;
   }
 }
-
-.buttons{
-  position: absolute;
-  right: 1.7rem;
-
+.nav{
+  flex:3;
+  display: flex;
+  div{
+    flex: 1;
+    display: flex;
+    align-items: center;
+    button{
+      font-family: 'montserrat' , sans-serif;
+      font-weight: 400;
+      font-size: 20px;
+      border: none;
+      background-color: transparent;
+    }
+  }
+  div:nth-child(1){
+    justify-content: flex-end;
+  }
+  div:nth-child(2){
+    justify-content: center;
+  }
+  div:nth-child(3){
+    justify-content: flex-start;
+  }
+}
+.login2{
+  flex:1;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  div{
+    margin-right: 1rem;
+    background-color: #C4C4C4;
+    width: 43px;
+    height: 43px;
+    border-radius: 50%;
+  }
+  p{
+    font-family: 'montserrat' , sans-serif;
+    font-weight: 400;
+    font-family: 20px;
+  }
+}
+.login1{
+  display: flex;
+  flex:1;
+  justify-content: flex-end;
   button{
-    font-family: 'Roboto', sans-serif;
-    font-size: 1rem;
-    padding: 0.8rem;
-    border-radius: 0.5rem;
+    font-family: 'montserrat' , sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    padding: 0.5rem 1.5rem;
     border: none;
+    border-bottom-left-radius: 2rem;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
+    border-top-right-radius: 2rem;
 
     transition: filter 0.2s;
 
     &:first-child{
-      margin-right: 0.5rem;
-      background-color: #63B3ED;
+      margin-right: 1.2rem;
+      background-color: #FF7600;
+      color: white;
     }
     &:first-child:hover{
       filter: brightness(0.8);
@@ -38,7 +105,8 @@
     }
     
     &:last-child{
-      background-color: #4FD1C5;
+      background-color: #595959;
+      color: white;
     }
 
     &:last-child:hover{

@@ -3,27 +3,76 @@
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
   padding-top: 1rem;
-
-  h2{
-    padding-left: 30px;
-    padding-top: 1rem;
-    font-style: italic;
-  }
+}
+.content{
+  height: 280px;
+  display: flex;
+  width: 100%;
+  box-shadow: 0px 0px 22px 14px rgba(0,0,0,0.05);
 }
 
-.carouselContainer{
+.cardContainer{
+  flex: 1;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-evenly;
+}
+
+.cardProfile{
+  flex:1;
+  display: inline-block;
+}
+
+.cardContent{
+  flex:2;
+}
+
+.yellowCircle{
+  display: inline-block;
+  width: 160px;
+  height: 160px;
+  background-color: #FFA900;
+  border-radius: 50%;
+  z-index: 1;
+  transform: translate(45%, 15%);
+}
+
+.redCircle{
+  width: 160px;
+  height: 160px;
+  background-color: #CD113B;
+  border-radius: 50%;
+  z-index: 2;
+  display: inline-block;
+  transform: translate(75%, -58%);
+}
+
+.purpleSquare{
+  width: 160px;
+  height: 160px;
+  background-color: #52006A;
+  border-radius: 16px;
+  z-index: 3;
+  display: inline-block;
+  transform: translate(33%, -145%);
+}
+.profileImage{
+  border-radius: 10px;
+  z-index: 4;
+  display: inline-block;
+  transform: translate(45%, -250%);
+  border-radius: 10px;
+}
+
+.title{
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 30px 0 20px 20px;
+}
+.content{
   width: 100%;
-  margin: 1rem;
-  padding: 0.5rem;
-  background-color: #EDF2F7;
-  border-radius: 0.5rem;
-  box-shadow: 6px 6px 9px -1px rgba(0,0,0,0.75);
+  background-color: #F5F5F5;
+  border-radius: 16px;
 }
 
 .perfilInfo{
@@ -47,8 +96,4 @@
   display: flex;
   flex-direction: row;
   justify-content: space-between;
-}
-
-.carousel{
-  width: 100%;
 }

@@ -7,14 +7,14 @@ import styled from 'styled-components';
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  background-color: 'white';
+  padding: 0 1rem 0 1rem;
 `
 
 function App() {
   return (
     <Container>
-      {/* <Home /> */}
-      <Profile />
+      <Home />
+      {/* <Profile /> */}
     </Container>
   );
 }

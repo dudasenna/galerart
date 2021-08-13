@@ -5,73 +5,67 @@ import perfil from '../../../../asserts/img/perfil.png';
 import arte1 from '../../../../asserts/img/arte1.png';
 import arte2 from '../../../../asserts/img/arte2.png';
 import arte3 from '../../../../asserts/img/arte3.png';
-import { Image } from "@chakra-ui/react";
+import { Image } from '@chakra-ui/react';
+
+interface ArtistProps {
+  id: number;
+  profile: string;
+  arts: string[];
+  name: string;
+  artType: string;
+}
+
+const artist = [
+  {
+    id: 0,
+    profile: perfil,
+    arts: [arte1, arte2],
+    name: 'Mauro Andrade',
+    artType: 'Arte moderna',
+  },
+  {
+    id: 1,
+    profile: perfil,
+    arts: [arte1, arte2],
+    name: 'Mauro Andrade',
+    artType: 'Arte moderna',
+  },
+];
 
 export function Artists() {
-
-  const renderItem = () => {
-    const names = [
-      'Maria Luisa',
-      'Gabriel Oliveira',
-      'Washington Igor',
-      'Maria Luisa',
-      'Gabriel Oliveira',
-      'Washington Igor',
-    ];
-    return names.map((item: string) => (
-      <div key={item} className={styles.carouselContainer}>
-        <div className={styles.perfilInfo}>
-          <Image
-            boxSize="80px"
-            objectFit="cover"
-            src={perfil}
-            alt="Perfil"
-          />
-          <article>
-            <section>{item}</section>
-            <section>Estilo de Arte</section>
-          </article>
+  const renderCard = (artist: ArtistProps) => {
+    return (
+      <div className={styles.cardContainer}>
+        <div className={styles.cardProfile}>
+          <div className={styles.yellowCircle} />
+          <div className={styles.redCircle} />
+          <div className={styles.purpleSquare} />
+          <div className={styles.profileImage}>
+            <Image
+              boxSize='170px'
+              objectFit='cover'
+              src={artist.profile}
+              alt='Perfil'
+            />
+          </div>
         </div>
-        <div className={styles.images}>
-        <Image
-            boxSize="100px"
-            objectFit="cover"
-            src={arte1}
-            alt="Perfil"
-          />
-         <Image
-            boxSize="100px"
-            objectFit="cover"
-            src={arte2}
-            alt="Perfil"
-          />
-          <Image
-            boxSize="100px"
-            objectFit="cover"
-            src={arte3}
-            alt="Perfil"
-          />
+        <div className={styles.cardContent}>
+          <p>{artist.name}</p>
+          <p>{artist.artType}</p>
         </div>
       </div>
-    ));
+    );
   };
 
   return (
     <div className={styles.container}>
-      <div>
+      <div className={styles.title}>
         <h2>Artistas Recomendados</h2>
       </div>
-      <Carousel
-        className={styles.carousel}
-        isRTL={false}
-        disableArrowsOnEnd
-        pagination={false}
-        itemsToShow={3.5}
-        // enableMouseSwipe={false}
-        showArrows={false}
-      >
-        {renderItem()}
-      </Carousel>
+      <div className={styles.content}>
+        {renderCard(artist[0])}
+        {renderCard(artist[1])}
+      </div>
     </div>
   );
 }
