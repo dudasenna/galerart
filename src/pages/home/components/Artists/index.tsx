@@ -39,16 +39,18 @@ export function Artists() {
     return (
       <div className={styles.cardContainer}>
         <div className={styles.cardProfile}>
-          <div className={styles.yellowCircle} />
-          <div className={styles.redCircle} />
-          <div className={styles.purpleSquare} />
-          <div className={styles.profileImage}>
-            <Image
-              boxSize='170px'
-              objectFit='cover'
-              src={artist.profile}
-              alt='Perfil'
-            />
+          <div className={styles.cardProfileContent}>
+            <div className={styles.yellowCircle} />
+            <div className={styles.redCircle} />
+            <div className={styles.purpleSquare} />
+            <div className={styles.profileImage}>
+              <Image
+                boxSize='175px'
+                objectFit='cover'
+                src={artist.profile}
+                alt='Perfil'
+              />
+            </div>
           </div>
         </div>
         <div className={styles.cardContent}>

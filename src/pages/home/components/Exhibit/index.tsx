@@ -13,10 +13,12 @@ export function Exhibit() {
     return (
       <div className={styles.cardContainer}>
         <div className={styles.cardExpo}>
-          <div className={styles.redCircle} />
-          <div className={styles.purpleSquare} />
-          <div className={styles.expoImage}>
-            <Image objectFit='cover' src={expo} alt='Expo' />
+          <div className={styles.cardExpoContent}>
+            <div className={styles.redCircle} />
+            <div className={styles.purpleSquare} />
+            <div className={styles.expoImage}>
+              <Image objectFit='cover' src={expo} alt='Expo' />
+            </div>
           </div>
         </div>
         <div className={styles.cardContent}>
@@ -35,7 +37,7 @@ export function Exhibit() {
             <p className={styles.expoData}>16 ago - 24 ago / 2021</p>
           </div>
           <div>
-            <LocationOnIcon style={{fontSize: '24px'}} />
+            <LocationOnIcon style={{ fontSize: '24px' }} />
             <p>
               Rua Tavares de Almeida, 92
               <br />
