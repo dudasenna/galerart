@@ -1,56 +1,78 @@
 import React from 'react';
 import styles from './styles.module.scss';
-import Carousel from 'react-elastic-carousel';
-import arte1 from '../../../../asserts/img/arte1.png';
-import arte2 from '../../../../asserts/img/arte2.png';
-import arte3 from '../../../../asserts/img/arte3.png';
+import expo from '../../../../asserts/img/expo.png';
+import photoIcon from '../../../../asserts/img/photoIcon.png';
+import rightArrow from '../../../../asserts/img/rightArrow.png';
 import { Image } from '@chakra-ui/react';
-import { Rating } from '@material-ui/lab';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import LocationOnIcon from '@material-ui/icons/LocationOn';
 
 export function Exhibit() {
-  const renderItem = () => {
-    const images = [arte1, arte2, arte3, arte1, arte2, arte3];
-    return images.map((item: any) => (
-      <div key={item} className={styles.carouselContainer}>
-        <Image
-          boxSize='150px'
-          objectFit='cover'
-          src={item}
-          alt='Imagem da exposição'
-        />
-        <article>
-          <section>Nome</section>
-          <section>06/06/2023</section>
-          <section>R$30,00</section>
-        </article>
-        <article>
-          <section>Galeria X</section>
-          <section>Estilo de arte</section>
-          <section>
-            <p>Nota do Público</p>
-            <Rating readOnly value={4.3} precision={0.1} />
-          </section>
-        </article>
+  const renderCard = (expo: string, fav: boolean) => {
+    const color = fav ? '#CD113B' : '#c4c4c4';
+    return (
+      <div className={styles.cardContainer}>
+        <div className={styles.cardExpo}>
+          <div className={styles.redCircle} />
+          <div className={styles.purpleSquare} />
+          <div className={styles.expoImage}>
+            <Image objectFit='cover' src={expo} alt='Expo' />
+          </div>
+        </div>
+        <div className={styles.cardContent}>
+          <div>
+            <p>Melhor expo</p>
+            <FavoriteIcon style={{ color, fontSize: '24px' }} />
+          </div>
+          <div>
+            <Image
+              boxSize='24px'
+              objectFit='cover'
+              src={photoIcon}
+              alt='Photo icon'
+            />
+            <p className={styles.expoName}>ArtSoul</p>
+            <p className={styles.expoData}>16 ago - 24 ago / 2021</p>
+          </div>
+          <div>
+            <LocationOnIcon style={{fontSize: '24px'}} />
+            <p>
+              Rua Tavares de Almeida, 92
+              <br />
+              Recife, PE
+            </p>
+          </div>
+          <div>
+            <p className={styles.expoSchedule}>Horário de funcionamento</p>
+            <p className={styles.expoHour}>10:00 - 17:00</p>
+          </div>
+        </div>
       </div>
-    ));
+    );
   };
 
   return (
     <div className={styles.container}>
-      <div>
-        <h2>Exposições para você</h2>
+      <div className={styles.title}>
+        <h2>Próximas exposições para você</h2>
       </div>
-      <Carousel
-        className={styles.carousel}
-        isRTL={false}
-        disableArrowsOnEnd
-        pagination={false}
-        itemsToShow={2.8}
-        // enableMouseSwipe={false}
-        showArrows={false}
-      >
-        {renderItem()}
-      </Carousel>
+      <div className={styles.content}>
+        <div className={styles.expoContent}>
+          {renderCard(expo, true)}
+          {renderCard(expo, false)}
+        </div>
+        <div className={styles.pageExpoButton}>
+          <button>
+            <p>Mais exposições</p>
+            <Image
+              boxSize='25px'
+              objectFit='cover'
+              src={rightArrow}
+              alt='Arrow'
+            />
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

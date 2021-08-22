@@ -1,39 +1,163 @@
-.container{
+.container {
   flex: 1;
   display: flex;
   flex-direction: column;
   width: 100%;
-  font-family: 'Roboto', sans-serif;
   padding-top: 1rem;
-
-  h2{
-    padding-left: 30px;
-    padding-top: 1rem;
-    font-style: italic;
-  }
 }
 
-.carouselContainer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.title {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  padding: 3rem 0 2rem 1.25rem;
+}
+
+.content {
+  height: 360px;
   width: 100%;
-  margin: 1rem;
-  padding: 0.5rem;
-  background-color: #EDF2F7;
-  border-radius: 0.5rem;
-  box-shadow: 6px 6px 9px -1px rgba(0,0,0,0.75);
+  display: flex;
+  flex-direction: column;
+  background-color: #f5f5f5;
+  border-radius: 16px;
+  box-shadow: 0px 0px 22px 14px rgba(0, 0, 0, 0.05);
 
-  article{
-    flex:1;
-    padding: 0 0.5rem;
+  .expoContent {
+    height: 350px;
+    display: flex;
+  }
+  .pageExpoButton {
+    padding: 0 1.5rem 1.5rem 1.5rem;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
 
-    section:not(section:nth-child(1)){
-      padding-top: 1rem;
+    button {
+      display: flex;
+      outline: none;
+      border: none;
+      background-color: #f5f5f5;
+
+      p {
+        font-family: 'Montserrat', sans-serif;
+        font-weight: 400;
+        font-size: 20px;
+        padding-right: 16px;
+      }
     }
   }
 }
 
-.carousel{
+.cardContainer {
+  flex: 1;
   width: 100%;
+  height: 100%;
+  display: flex;
+}
+
+.cardExpo {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  .redCircle {
+    width: 165px;
+    height: 165px;
+    background-color: #cd113b;
+    border-radius: 50%;
+    position: absolute;
+    right: -5px;
+    top: 95px;
+  }
+
+  .purpleSquare {
+    width: 225px;
+    height: 225px;
+    background-color: #52006a;
+    border-radius: 16px;
+    position: absolute;
+    left: 20px;
+    top:110px;
+  }
+
+  .expoImage {
+    position: absolute;
+    left: 35px;
+    top: 50px;
+  }
+}
+
+.cardContent {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding-top: 3rem;
+
+  div:nth-child(1){
+    padding-left: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    p{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 1.75rem;
+      padding-right: 1.5rem;
+    }
+  }
+
+  div:nth-child(2){
+    padding-left: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+
+    .expoName{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 1.25rem;
+      padding: 0 3rem 0 1rem;
+    }
+
+   .expoData{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+    }
+  }
+
+  div:nth-child(3){
+    padding-left: 1rem;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    p{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      padding-left: 1rem;
+    }
+  }
+
+  div:nth-child(4){
+    padding-left: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+    .expoSchedule{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+    }
+
+    .expoHour{
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1.25rem;
+    }
+  }
 }

@@ -36,58 +36,56 @@ const artist = [
 
 export function Artists() {
   const renderCard = (artist: ArtistProps) => {
-    <div className={styles.cardContainer}>
-      <div className={styles.cardProfile}>
-        <div className={styles.yellowCircle} />
-        <div className={styles.redCircle} />
-        <div className={styles.purpleSquare} />
-        <div className={styles.profileImage}>
-          <Image
-            boxSize='170px'
-            objectFit='cover'
-            src={artist.profile}
-            alt='Perfil'
-          />
-        </div>
-      </div>{' '}
-      <div>
-        <Link to='/perfil'> Ir para perfil</Link>
-      </div>
-      <div className={styles.cardContent}>
-        <div className={styles.profileInfo}>
-          <p>{artist.name}</p>
-
-          <div>
-            <Image boxSize='30px' objectFit='cover' src={paint} alt='Paint' />
-            <p>{artist.artType}</p>
+    return (
+      <div className={styles.cardContainer}>
+        <div className={styles.cardProfile}>
+          <div className={styles.yellowCircle} />
+          <div className={styles.redCircle} />
+          <div className={styles.purpleSquare} />
+          <div className={styles.profileImage}>
+            <Image
+              boxSize='170px'
+              objectFit='cover'
+              src={artist.profile}
+              alt='Perfil'
+            />
           </div>
         </div>
-        <div className={styles.profileContentImages}>
-          <Image
-            boxSize='160px'
-            objectFit='cover'
-            src={artist.arts[0]}
-            alt='Arte1'
-          />
-          <Image
-            boxSize='160px'
-            objectFit='cover'
-            src={artist.arts[1]}
-            alt='Arte2'
-          />
-
-          <button>
+        <div className={styles.cardContent}>
+          <div className={styles.profileInfo}>
+            <p>{artist.name}</p>
+            <div>
+              <Image boxSize='30px' objectFit='cover' src={paint} alt='Paint' />
+              <p>{artist.artType}</p>
+            </div>
+          </div>
+          <div className={styles.profileContentImages}>
             <Image
-              boxSize='25px'
+              boxSize='160px'
               objectFit='cover'
-              src={rightArrow}
-              alt='Arrow'
+              src={artist.arts[0]}
+              alt='Arte1'
             />
-            <p>Ver mais</p>
-          </button>
+            <Image
+              boxSize='160px'
+              objectFit='cover'
+              src={artist.arts[1]}
+              alt='Arte2'
+            />
+
+            <button>
+              <Image
+                boxSize='25px'
+                objectFit='cover'
+                src={rightArrow}
+                alt='Arrow'
+              />
+              <p>Ver mais</p>
+            </button>
+          </div>
         </div>
       </div>
-    </div>;
+    );
   };
 
   return (
