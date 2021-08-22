@@ -14,7 +14,6 @@ function Home() {
     <Container>
       <Header />
       <Artists />
-      <div>teste</div>
       <Exhibit />
     </Container>
   );
