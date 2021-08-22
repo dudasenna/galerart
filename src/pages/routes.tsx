@@ -3,13 +3,13 @@ import { BrowserRouter, Route } from "react-router-dom";
 
 import Home from "./home";
 import Login from "./logar/Login";
-import Profile from "./profile";
+import Artista from "./artist";
 
 function Routes() {
   return (
     <BrowserRouter>
       <Route path="/" exact component={Home} />
-      <Route path="/perfil" component={Profile} />
+      <Route path="/artista" component={Artista} />
       <Route path="/login" component={Login} />
     </BrowserRouter>
   );

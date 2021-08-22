@@ -8,7 +8,7 @@ const Container = styled.div`
   flex-direction: column;
 `
 
-function Home() {
+function Artist() {
   return (
     <Container>
       <Header />
@@ -20,4 +20,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Artist;
