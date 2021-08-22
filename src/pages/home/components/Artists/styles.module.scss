@@ -21,16 +21,16 @@
 
 .cardProfile{
   flex:1;
-  display: inline-block;
+  position: relative;
 
   .yellowCircle{
-    display: inline-block;
     width: 160px;
     height: 160px;
     background-color: #FFA900;
     border-radius: 50%;
-    z-index: 1;
-    transform: translate(45%, 15%);
+    position: absolute;
+    left: 55px;
+    top: 25px;
   }
   
   .redCircle{
@@ -38,9 +38,9 @@
     height: 160px;
     background-color: #CD113B;
     border-radius: 50%;
-    z-index: 2;
-    display: inline-block;
-    transform: translate(75%, -58%);
+    position: absolute;
+    left: 100px;
+    top: 75px;
   }
   
   .purpleSquare{
@@ -48,17 +48,15 @@
     height: 160px;
     background-color: #52006A;
     border-radius: 16px;
-    z-index: 3;
-    display: inline-block;
-    transform: translate(33%, -145%);
+    position: absolute;
+    left: 35px;
+    top: 100px;
   }
 
   .profileImage{
-    border-radius: 10px;
-    z-index: 4;
-    display: inline-block;
-    transform: translate(45%, -250%);
-    border-radius: 10px;
+    position: absolute;
+    left: 60px;
+    top: 60px;
   }
 }
 
