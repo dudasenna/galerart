@@ -29,8 +29,8 @@ export default function Header() {
         </div>
       ) : (
         <div className={styles.login1}>
-          <button>CADASTRAR</button>
-          <button>ENTRAR</button>
+          <button name="cadastrar" onClick={() => console.log('Cadastrar')}>CADASTRAR</button>
+          <button name="login" onClick={() => console.log('Cadastrar')}>ENTRAR</button>
         </div>
       )}
     </div>
