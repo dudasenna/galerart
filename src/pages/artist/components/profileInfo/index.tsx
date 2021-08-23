@@ -1,137 +1,77 @@
-import React, { useState } from "react";
-import { Button, Input, InputGroup, InputRightElement } from "@chakra-ui/react";
-import { EditIcon, CheckIcon } from "@chakra-ui/icons";
-import styled from "styled-components";
-
-const Container = styled.div`
-  flex: 1;
-  display: "flex";
-  align-items: "center";
-  padding: 1rem;
-  justify-content: "space-between";
-`;
-
-const EditContainer = styled.div`
-  align-items: "center";
-  padding-top: 1rem;
-`;
+import React from 'react';
+import perfil from '../../../../asserts/img/perfil.png';
+import paint from '../../../../asserts/img/paint.png';
+import { Image } from '@chakra-ui/react';
+import styles from './styles.module.scss';
+import InstagramIcon from '@material-ui/icons/Instagram';
+import FacebookIcon from '@material-ui/icons/Facebook';
 
 function ProfileInfo() {
-  const [editName, setEditName] = useState(false);
-  const [name, setName] = useState("Nome");
-  const [editingName, setEditingName] = useState("Nome");
+  const cardImage = () => {
+    return (
+      <div className={styles.cardProfileImage}>
+        <div className={styles.profileImageContent}>
+          <div className={styles.yellowCircle} />
+          <div className={styles.redCircle} />
+          <div className={styles.purpleSquare} />
+          <div className={styles.profileImage}>
+            <Image
+              boxSize='175px'
+              objectFit='cover'
+              src={perfil}
+              alt='Perfil'
+            />
+          </div>
+        </div>
+      </div>
+    );
+  };
 
-  const [editAge, setEditAge] = useState(false);
-  const [age, setAge] = useState("22");
-  const [editingAge, setEditingAge] = useState("22");
+  const cardContent = () => {
+    return (
+      <div className={styles.cardProfileContent}>
+        <p className={styles.profileName}>Mauro Andrade</p>
+        <div className={styles.profileArtType}>
+          <Image boxSize='27px' objectFit='cover' src={paint} alt='Paint' />
+          <p>Arte moderna</p>
+        </div>
+        <p className={styles.profileDescription}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat. Duis aute irure dolor in
+          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+          pariatur.
+        </p>
+      </div>
+    );
+  };
 
-  const [editSex, setEditSex] = useState(false);
-  const [sex, setSex] = useState("Masculino");
-  const [editingSex, setEditingSex] = useState("Masculino");
+  const cardContact = () => {
+    return (
+      <div className={styles.cardProfileContact}>
+        <div className={styles.profileContactType}>
+          <p>Telefone</p>
+          <p>Email</p>
+          <div>
+            <InstagramIcon style={{fontSize: '24px', marginRight: '16'}} />
+            <FacebookIcon style={{fontSize: '24px'}} />
+          </div>
+        </div>
+        <div className={styles.profileContactInfo}>
+          <p>(81) 99999-9999</p>
+          <p>mauro.andrade@galerart.com</p>
+        </div>
+      </div>
+    )
+  }
 
   return (
-    <Container>
-      <h3>Sobre você</h3>
-      <EditContainer>
-        <Input
-          type="text"
-          value={editName ? editingName : name}
-          style={{
-            border: "solid 1px",
-            padding: "0.2rem 0 0.2rem 0.5rem",
-            borderRadius: "1rem",
-            outline: "none",
-          }}
-          disabled={!editName}
-          onChange={(event) => setEditingName(event.target.value)}
-        />
-        <Button
-          onClick={() => {
-            if (editName && editingName.length !== 0) setName(editingName);
-            setEditName(!editName);
-          }}
-          style={{
-            paddingBottom: "0.2rem",
-            backgroundColor: "white",
-            border: "none",
-            outline: "none",
-            paddingLeft: "1rem",
-          }}
-        >
-          {editName ? (
-            <CheckIcon boxSize="1.3rem" color="#4299E1" />
-          ) : (
-            <EditIcon boxSize="1.3rem" color="#4299E1" />
-          )}
-        </Button>
-      </EditContainer>
-      <EditContainer>
-        <Input
-          type="text"
-          value={editAge ? editingAge : age}
-          style={{
-            border: "solid 1px",
-            padding: "0.2rem 0 0.2rem 0.5rem",
-            borderRadius: "1rem",
-            outline: "none",
-          }}
-          disabled={!editAge}
-          onChange={(event) => setEditingAge(event.target.value)}
-        />
-        <Button
-          onClick={() => {
-            if (editAge && editingAge.length !== 0) setAge(editingAge);
-            setEditAge(!editAge);
-          }}
-          style={{
-            paddingBottom: "0.2rem",
-            backgroundColor: "white",
-            border: "none",
-            outline: "none",
-            paddingLeft: "1rem",
-          }}
-        >
-          {editAge ? (
-            <CheckIcon boxSize="1.3rem" color="#4299E1" />
-          ) : (
-            <EditIcon boxSize="1.3rem" color="#4299E1" />
-          )}
-        </Button>
-      </EditContainer>
-      <EditContainer>
-        <Input
-          type="text"
-          value={editSex ? editingSex : sex}
-          style={{
-            border: "solid 1px",
-            padding: "0.2rem 0 0.2rem 0.5rem",
-            borderRadius: "1rem",
-            outline: "none",
-          }}
-          disabled={!editSex}
-          onChange={(event) => setEditingSex(event.target.value)}
-        />
-        <Button
-          onClick={() => {
-            if (editSex && editingSex.length !== 0) setSex(editingSex);
-            setEditSex(!editSex);
-          }}
-          style={{
-            paddingBottom: "0.2rem",
-            backgroundColor: "white",
-            border: "none",
-            outline: "none",
-            paddingLeft: "1rem",
-          }}
-        >
-          {editSex ? (
-            <CheckIcon boxSize="1.3rem" color="#4299E1" />
-          ) : (
-            <EditIcon boxSize="1.3rem" color="#4299E1" />
-          )}
-        </Button>
-      </EditContainer>
-    </Container>
+    <div className={styles.container}>
+      {cardImage()}
+      {cardContent()}
+      {cardContact()}
+    </div>
   );
 }
 

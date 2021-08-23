@@ -111,13 +111,15 @@
   padding: 0 1rem 0 1rem;
   background-color: #fff;
 
-  button{
+  a{
     display: flex;
     align-items: center;
     flex-direction: column;
     outline: none;
     border: none;
     background-color: #FFF;
+    text-decoration: none;
+    color: black;
 
     p{
       font-family: 'Montserrat', sans-serif;

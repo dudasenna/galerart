@@ -75,7 +75,7 @@ export function Artists() {
               alt='Arte2'
             />
 
-            <button>
+            <Link to="/artista">
               <Image
                 boxSize='25px'
                 objectFit='cover'
@@ -83,7 +83,7 @@ export function Artists() {
                 alt='Arrow'
               />
               <p>Ver mais</p>
-            </button>
+            </Link>
           </div>
         </div>
       </div>
