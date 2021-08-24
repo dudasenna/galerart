@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import styles from './styles.module.scss';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import styles from "./styles.module.scss";
 
 export default function Header() {
   const [isLogin, setIsLogin] = useState(false);
@@ -29,8 +30,16 @@ export default function Header() {
         </div>
       ) : (
         <div className={styles.login1}>
-          <button name="cadastrar" onClick={() => console.log('Cadastrar')}>CADASTRAR</button>
-          <button name="login" onClick={() => console.log('Cadastrar')}>ENTRAR</button>
+          <Link to="/cadastro">
+            <button name="cadastrar" onClick={() => console.log("Cadastrar")}>
+              CADASTRAR
+            </button>
+          </Link>
+          <Link to="/login">
+            <button name="login" onClick={() => console.log("Cadastrar")}>
+              ENTRAR
+            </button>
+          </Link>
         </div>
       )}
     </div>
