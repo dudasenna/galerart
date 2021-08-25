@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
+const axios = require('axios');
+
 function Cadastro() {
   let [name, setName] = useState();
   let [fullname, setFullName] = useState();
@@ -25,14 +27,36 @@ function Cadastro() {
   };
 
   //quando clica em entrar
-  const submit = (e: any) => {
+  const submit = async (e: any) => {
     e.preventDefault();
     setFullName(name);
     setFullSenha(senha);
     setFullRepSenha(repsenha);
-    console.log("name", name);
-    console.log("senha", senha);
-    console.log("rep:", repsenha);
+
+    
+    console.log('Dados para envio:', name, senha,repsenha)
+    if(senha === repsenha){
+      try{
+        const resp = await axios.post('http://127.0.0.1:8000/users/', {
+          email: name,
+          password: senha
+        })
+
+        if(resp.status == 201){
+          console.log('Cadastro de novo usuário realizado com sucesso')
+        }
+        else{
+          console.log('Erro ao tentar cadastrar novo usuário')
+        }
+      }catch(err){
+
+        console.log('Erro ao efetuar cadastro, usuário com esse email já cadastrado');
+      }
+    }
+
+    else{
+      console.log('As senhas estão diferentes, por favor tente novamente')
+    }
   };
 
   return (
@@ -41,6 +65,7 @@ function Cadastro() {
         <div className={styles.title}>
           <h2>Galer</h2>
           <h2>A</h2>
+
           <h2>r</h2>
           <h2>t</h2>
         </div>
@@ -55,19 +80,21 @@ function Cadastro() {
               <div> Cadastro</div>
             </div>
 
-            <input type="text" placeholder="Seu email" onChange={InputEvent} />
+            <input  data-testid="email" type="text" placeholder="Seu email" onChange={InputEvent} />
             <input
-              type="text"
+              data-testid="senha"
+              type="password"
               placeholder="Sua senha"
               onChange={InputEventtwo}
             />
             <input
-              type="text"
+              data-testid="repetSenha"
+              type="password"
               placeholder="Repita sua senha"
               onChange={InputEventthree}
             />
 
-            <button className={styles.btn}> Entrar</button>
+            <button data-testid="submitButton" className={styles.btn}> Entrar</button>
           </form>
           {/* <div className={styles.final}>Não possui uma conta?</div>{" "}
           <div className={styles.fim}>Cadastrar</div>{" "}

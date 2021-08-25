@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
+const axios = require('axios');
+
 function Recupsenha() {
   let [name, setName] = useState();
   let [fullname, setFullName] = useState();
@@ -25,15 +27,28 @@ function Recupsenha() {
   };
 
   //quando clica em entrar
-  const submit = (e: any) => {
+  const submit = async (e: any) => {
     e.preventDefault();
     setFullName(name);
-    setFullSenha(senha);
-    setFullRepSenha(repsenha);
-    console.log("name", name);
-    console.log("senha", senha);
-    console.log("rep:", repsenha);
-  };
+
+    console.log('Dados para envio:', name)
+
+    try{
+      const resp = await axios.get('http://127.0.0.1:8000/users/')
+
+      const elem = resp.data.find((item:any) => item?.email == name)
+
+      if(elem){
+        console.log('Email cadastrado no sistema, a seguir redefina sua senha')
+      }
+      else{
+        console.log('Email não consta nos registros do sistema, por favor, tente se cadastrar')
+      }
+    }
+  catch(err){
+      console.log('Erro ao tentar redefinir senha, serviço indisponível')
+  }
+};
 
   return (
     <div className={styles.container}>
@@ -57,7 +72,7 @@ function Recupsenha() {
             <div className={styles.text}>
               Informe seu e-mail para alterar a senha
             </div>
-            <input type="text" placeholder="Seu email" onChange={InputEvent} />
+            <input data-testid="redefinirEmail" type="text" placeholder="Seu email" onChange={InputEvent} />
             {/* <input
               type="text"
               placeholder="Sua senha"
@@ -69,7 +84,7 @@ function Recupsenha() {
               onChange={InputEventthree}
             /> */}
 
-            <button className={styles.btn}> Entrar</button>
+            <button data-testid="submitButtonEmail" className={styles.btn}> Entrar</button>
           </form>
           {/* <div className={styles.final}>Não possui uma conta?</div>{" "}
           <div className={styles.fim}>Cadastrar</div>{" "}

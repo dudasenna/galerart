@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
+const axios = require('axios');
+
 function Redefsenha() {
   let [name, setName] = useState();
   let [fullname, setFullName] = useState();
@@ -25,14 +27,37 @@ function Redefsenha() {
   };
 
   //quando clica em entrar
-  const submit = (e: any) => {
+  const submit = async (e: any) => {
     e.preventDefault();
-    setFullName(name);
     setFullSenha(senha);
     setFullRepSenha(repsenha);
-    console.log("name", name);
-    console.log("senha", senha);
-    console.log("rep:", repsenha);
+
+    const name = 'redefinir@test.com';
+
+    console.log('Dados para envio:', senha,repsenha)
+    if(senha === repsenha){
+      try{
+        const resp1 = await axios.get('http://127.0.0.1:8000/users/')
+        const elem = resp1.data.find((item:any) => item?.email == name)
+
+        const resp2 = await axios.patch(`http://127.0.0.1:8000/user/${elem.id}/`, {
+          password: senha
+        })
+
+        if(resp2.status == 200){
+          console.log('Senha Atualizada com sucesso')
+        }
+        else{
+          throw new Error
+        }
+      }catch(err){
+        console.log('Erro ao tentar atualizar senha, serviço indisponível no momento');
+      }
+    }
+
+    else{
+      console.log('As senhas estão diferentes, por favor tente novamente')
+    }
   };
 
   return (
@@ -57,17 +82,19 @@ function Redefsenha() {
 
             {/* <input type="text" placeholder="Seu email" onChange={InputEvent} /> */}
             <input
+              data-testid="redfSenha"
               type="text"
               placeholder="Nova senha"
               onChange={InputEventtwo}
             />
             <input
+              data-testid="redfSenhaRepetida"
               type="text"
               placeholder="Repita a nova senha"
               onChange={InputEventthree}
             />
 
-            <button className={styles.btn}> Entrar</button>
+            <button data-testid="submitButtonSenha" className={styles.btn}> Entrar</button>
           </form>
           {/* <div className={styles.final}>Não possui uma conta?</div>{" "}
           <div className={styles.fim}>Cadastrar</div>{" "}

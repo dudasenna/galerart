@@ -30,16 +30,16 @@ export default function Header() {
         </div>
       ) : (
         <div className={styles.login1}>
-          <Link to="/cadastro">
+          {/* <Link to="/cadastro"> */}
             <button name="cadastrar" onClick={() => console.log("Cadastrar")}>
               CADASTRAR
             </button>
-          </Link>
-          <Link to="/login">
-            <button name="login" onClick={() => console.log("Cadastrar")}>
+          {/* </Link> */}
+          {/* <Link to="/login"> */}
+            <button name="login" onClick={() => console.log("Login")}>
               ENTRAR
             </button>
-          </Link>
+          {/* </Link> */}
         </div>
       )}
     </div>

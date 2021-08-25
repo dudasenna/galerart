@@ -4,6 +4,8 @@ import styled from "styled-components";
 import { Icon } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
 
+const axios = require('axios');
+
 function Login() {
   let [name, setName] = useState();
   let [fullname, setFullName] = useState();
@@ -20,13 +22,29 @@ function Login() {
   };
 
   //quando clica em entrar
-  const submit = (e: any) => {
+  const submit = async (e: any) => {
     e.preventDefault();
     setFullName(name);
     setFullSenha(senha);
-    console.log("name", name);
-    console.log("senha", senha);
-  };
+
+    console.log('Dados para envio:', name, senha)
+
+    try{
+    const resp = await axios.get('http://127.0.0.1:8000/users/')
+
+    const elem = resp.data.find((item:any) => item?.email == name && item?.password == senha)
+
+    if(elem){
+      console.log('Usuário logado com sucesso')
+    }
+    else{
+      console.log('Usuário não existe, por favor verifique seus dados ou se cadastre no site')
+    }
+  }
+  catch(err){
+    console.log('Erro ao tentar buscar usuários')
+  }
+};
 
   return (
     <div className={styles.container}>
@@ -48,25 +66,27 @@ function Login() {
             </div>
 
             <input
+              data-testid="email"
               type="text"
               placeholder="  Seu email"
               onChange={InputEvent}
             />
             <input
-              type="text"
+              data-testid="senha"
+              type="password"
               placeholder="  Sua senha"
               onChange={InputEventtwo}
             />
 
-            <button className={styles.btn}> Entrar</button>
+            <button data-testid="submitButton" className={styles.btn}> Entrar</button>
           </form>
           <div className={styles.final}>Não possui uma conta?</div>{" "}
-          <Link className={styles.fim} to="/cadastro">
+          {/* <Link className={styles.fim} to="/cadastro"> */}
             <div>Cadastrar</div>{" "}
-          </Link>
-          <Link to="/recuperarsenha" className={styles.fim}>
-            <div>Esqueceu a senha?</div>
-          </Link>
+          {/* </Link> */}
+          {/* <Link to="/recuperarsenha" className={styles.fim}> */}
+            <div data-testid="redefinirSenha" >Esqueceu a senha?</div>
+          {/* </Link> */}
         </div>
       </div>
     </div>
